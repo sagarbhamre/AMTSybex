@@ -1,0 +1,46 @@
+<div class="container">
+    <img src="src/app/Angular.png" class="ang-img"/>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <h1 class="text-center">{{ appName }} - CRUD Operations</h1>
+      <div class="clear">&nbsp;</div>
+      <div class="row">
+        <div class="col-sm-3"><label>Task Name:</label></div>
+        <div class="col-sm-9"><input class="form-control" type="text" #taskName required></div>
+      </div>
+      <div class="row">
+          <div class="col-sm-3"><label>Task Description:</label></div>
+          <div class="col-sm-9"><input type="text" class="form-control" #taskDescrition></div>
+       </div>
+      <div class="clear">&nbsp;</div>
+      <button class="btn btn-primary" (click)="onAddTask(taskName.value,taskDescrition.value)">Add New Task</button> &nbsp;
+      
+      <hr>
+      <div class="table-wrapper">
+          <table class="table table-responsive table-striped table-bordered text-center">
+              <tr>
+                <th class="text-center">Task Name</th>
+                <th colspan="2">Task Description</th>
+              </tr>
+              <tr *ngFor="let task of tasks">
+                <td>{{ task.name }}</td>
+                <td>{{task.description}}</td>
+                <td class="text-center">
+                    <button class="btn btn-primary" (click)="onUpdate()">Save Task( PUT )</button> &nbsp;
+                </td>
+              </tr>
+            </table>
+      </div>
+    
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="col-xs-12 text-center">
+          <button class="btn btn-primary" (click)="onGet()">View all Tasks( GET )</button> &nbsp;
+          <button class="btn btn-danger" (click)="onDelete(task)">Delete All (DELETE)</button> &nbsp;
+      </div>
+    </div>
+  </div>
+  <br/><br/>
+</div>

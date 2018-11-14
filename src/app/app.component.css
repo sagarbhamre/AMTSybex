@@ -1,0 +1,20 @@
+.container {
+  margin-top: 50px;
+}
+
+.clear{
+  clear:both;
+}
+
+.ang-img{
+margin: 0px auto;
+display: block;
+width: 100px;
+height: 100px;
+}
+
+.table-wrapper{
+  max-height: 400px;
+  overflow: auto;
+  display: block;
+}
